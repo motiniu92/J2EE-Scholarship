@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body bgcolor="lightgreen">
+        <script>
+             /*var mail;
+              mail=prompt("Enter Your mail");*/
+            function validateEmail(){
+             
+               var x = document.forms["myForm"]["email"].value;
+               var atpos = x.indexOf("@");
+               var dotpos = x.lastIndexOf(".");
+               if(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+                   alert("The E-mail address is not valild");
+                   return false;
+               } else {
+                   alert(" The E-mail address is valid");
+               }
+           }
+       </script>
+    </head>
+    <body>
+        <form name="myForm" action="#" onsubmit="return validateEmail()" method="post">
+            Email: <input type="text" name="email">
+            <input type="submit" value="Send">
+        </form>
+            
+        </script>
+    </body>
+</html>
