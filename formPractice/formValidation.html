@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            label{
+                color: red;
+                padding: 3px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Form Validation</h1>
+        <form name="myForm">
+            Name:
+            <input type="text" name="fname"><label id="fnamex"></label><br/>
+            Email:
+            <input type="text" name="email"><label id="email"></label><br/>
+            round:
+            <select name="Round">
+                <option value="Select A Round" selected="selected">Select A Round</option>
+                <option value="Round 36">Round-36</option>
+                <option value="Round 37">Round-37</option>
+                <option value="Round 38">Round-38</option>
+            </select>
+            <label id="round"></label><br/>
+            <textarea rows="5" cols="20" name="msg" placeholder="Enter at least 10 characters"></textarea>
+            <label id="msg"></label><br/>
+        </form>
+        <button onclick="validateForm">Submit</button>
+
+        <script>
+            var win;
+            function validateForm() {
+            /////for Name/////
+            var fname = document.forms["myForm"][fname].value;
+            var email = document.forms["myForm"][email].value;
+            var round = document.forms["myForm"][round].value;
+            var msg = document.forms["myForm"][msg].value;
+            /////validation for Name field/////  
+            if (fname == ""){
+            document.getElementById('fnamex').innerHTML = "Must be your field out";
+            return false;
+            } else if (fname.length < 3){
+            document.getElementById('fnamex').innerHTML = "Name length at least 3 characters";
+            } else {
+            document.getElementById('fnamex').innerHTML = "";
+            }
+
+
+            /////validation for Email field/////     
+            if (email == ""){
+            document.getElementById('email').innerHTML = "Must be your field out";
+            return false;
+            } else {
+            document.getElementById('email').innerHTML = "";
+            }
+
+            /////validation for round field/////     
+            if (round == "Select A Round"){
+            document.getElementById('round').innerHTML = "Select your Round";
+            return false;
+            } else {
+            document.getElementById('round').innerHTML = "";
+            }
+
+            /////validation for message field/////  
+            if (msg == ""){
+            document.getElementById('msg').innerHTML = " at least 10 characters";
+            return false;
+            } else {
+            document.getElementById('msg').innerHTML = "";
+            }
+
+            ///// open  new window/////  
+            win = window.open("", "", "width=400");
+            win.document.write("<h2><center>Form output</center></h2><hr/>");
+            win.document.write("Name: " + fname + "<br/>");
+          win.document.write("Email " + email + "<br/>");
+            win.document.write("Comments " + msg + "<br/>");
+
+                            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script>
+  function isPrime(num){
+                for(var i = 2; i < num; i++)
+                    if(num % i === 0)
+					return false;
+                return num !== 1 && num !== 0;
+            }
+            alert(isPrime(5));
+            
+            function printPrimes(sn, en){
+                for(sn; sn <en; sn++){
+                    if(isPrime(sn)){
+                        document.write(sn+"<hr/>");
+                    }
+                }
+            }
+      printPrimes(1,100);
+</script>
+</body>
+</html>

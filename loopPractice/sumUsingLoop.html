@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h2>Sum using Loop</h2>
+ <h2>Sum using Loop</h2>
+        <script>
+            var sn = parseInt(prompt("Enter Starting Number", ""));
+            var en = parseInt(prompt("Enter Ending Number", ""));
+            var sum = 0;
+            function makeSum(startingNum, endingNum) {
+                if (startingNum < endingNum) {
+                    for (startingNum; startingNum <= endingNum;
+                            startingNum++) {
+                        sum += startingNum;
+                    }
+                } else if (startingNum > endingNum) {
+                    for (startingNum; startingNum >= endingNum;
+                            startingNum--) {
+                        sum += startingNum;
+                    }
+                } else if (startingNum == endingNum) {
+                    sum = startingNum;
+                } else {
+                    sum = 0;
+                }
+                return sum;
+            }
+            alert(makeSum(sn, en));
+        </script>
+</body>
+</html>

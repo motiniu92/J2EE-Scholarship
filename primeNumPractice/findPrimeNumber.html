@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Find Prime Number</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body bgcolor="azure">
+        <script type="text/javascript">
+function isPrime(num){
+var n=Math.sqrt(num);
+for(i=2;i<=n;i++){
+if(num%i==0)
+return false;
+}
+return true;
+}
+var number=prompt("Enter for test","0");
+if(isPrime(number)){
+document.write(number+" "+"Is Prime");
+}else{
+document.write(number+" " +"Is not prime");
+}
+</script>
+
+    </body>
+</html>
